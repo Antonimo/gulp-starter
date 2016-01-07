@@ -1,0 +1,126 @@
+{% extends 'layouts/base.html' %}
+
+{% block body_class %} page home {% endblock %}
+
+{% block content %}
+
+<section class="sequence-section">
+  <div id="hp-sequence">
+    <ul class="seq-canvas">
+    
+      {% for i in range(0, 2) -%}
+      
+        <li class="step">
+          <div class="step-content">
+            <div class="step-content-body" style="background-image: url('./img/slide{{ i+1 }}.jpg')">
+              <div class="container">
+                <div class="step-content-texts-wrap">
+                  <span class="step-title">Company is the best </span>
+                  <span class="step-sub-title">Priority International</span>
+                  <p class="step-text">
+                    Implement Priority with us all over the world.  <br>
+                    Get local support in Australia and the UK.
+                  </p>
+                  <span class="step-links">
+                    <a href="#" class="btn-green">Learn more</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      
+      {%- endfor %}
+      
+    </ul>
+  </div>
+  <div class="seq-actions">
+    <div class="container">
+      <div class="hp-sequence-pagination">
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+      
+      <div class="scroll-down ">
+        <a id="btn-scroll" href="#after-slider"><i class="fa fa-angle-down"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div id="after-slider"></div>
+
+
+
+<section class="section-container">
+  <h2 class="section-title">Our Products</h2>
+  <p class="section-lead">be the first to know when we launch</p>
+  
+  <div class="block-grid-lg-4 block-grid-sm-3 block-grid-xs-2">
+  
+  	{% for i in range(0, 12) -%}
+  
+    <div class="block-grid-item">
+      <a href="#" class="product-link">
+        <span class="product-img-box">
+          <span class="product-bg"></span>
+          <span class="product-img" style="background-image: url(./img/product-{{ loop.index % 4 }}.png)"></span>
+        </span>
+        <span class="product-description">
+          <span class="product-title">Priority Pro</span>
+          <span class="product-about">be the first to know when</span>
+        </span>
+      </a>
+    </div>
+    
+    {%- endfor %}
+    
+  </div>
+  
+</section>
+
+
+<section class="hp-services">
+  <div class="section-container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-lead">be the first to know when we launch</p>
+    
+    <div class="block-grid-xs-1 block-grid-sm-2 block-grid-md-4">
+    	
+    	{% for i in range(0, 4) -%}
+      
+      <div class="block-grid-item">
+        <a href="#" class="service-link">
+          <span class="service-bg2"></span>
+          <span class="service-img" style="background-image: url(./img/service-{{ loop.index }}.png)">
+            <i></i>
+          </span>
+          <span class="service-description">
+            <span class="service-title">Priority On Cloud</span>
+            <span class="service-about">
+              Amores dos tres to know into
+              controlles we launch tomorrow
+            </span>
+            <span class="service-more">Discover more</span>
+          </span>
+        </a>
+      </div>
+      
+      {%- endfor %}
+      
+    </div>
+    
+    <div class="section-more">
+      
+      <a href="#" class="btn-blue">
+        more services
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

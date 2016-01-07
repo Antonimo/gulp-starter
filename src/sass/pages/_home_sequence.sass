@@ -1,0 +1,234 @@
+.sequence-section
+  position: relative
+
+
+#hp-sequence
+  position: relative
+  width: 100%
+  max-width: 100%
+  height: 202px
+  overflow: hidden
+  margin: 0 auto
+  padding: 0
+
+  @media (min-width: $screen-sm-min)
+    height: 402px
+    
+  @media (min-width: $screen-md-min)
+    height: 690px
+
+  .seq-canvas
+    margin: 0
+    padding: 0
+    list-style: none
+    position: absolute
+    height: 100%
+    width: 100%
+    white-space: nowrap
+    font-size: 0
+    +transition-timing-function(cubic-bezier(0.77, 0, 0.175, 1))
+    
+    >
+      *
+        margin: 0
+        padding: 0
+        list-style: none
+        display: inline-block
+        vertical-align: top
+        width: 100%
+        height: 100%
+        white-space: normal
+
+      li:before
+        content: ""
+        display: inline-block
+        vertical-align: middle
+        height: 100%
+
+  .step-content
+    position: absolute
+    top: 0
+    width: 100%
+    height: 100%
+    margin: 0
+    font-size: 16px
+
+    .container
+      height: 100%
+
+  .step-content-body
+    height: 100%
+    background-position: right center
+    background-repeat: no-repeat
+    background-size: cover
+    position: relative
+    
+    .step-content-texts-wrap
+      padding-top: 45px
+      margin-left: 20px
+      
+      @media (min-width: $screen-sm-min)
+        padding-top: 110px
+        
+      @media (min-width: $screen-md-min)
+        padding-top: 240px
+        margin-left: 60px
+        
+    .step-title, 
+    .step-sub-title,
+    .step-text,
+    .step-links
+      opacity: 0
+      +transition-timing-function(cubic-bezier(0.23, 1, 0.32, 1))
+      +transition-duration(3s)
+      +transition-delay(1.4s)
+
+    .step-title, .step-sub-title
+      
+      font-family: $Raleway
+      font-size: 27px
+      display: block
+      line-height: 1
+      +translate(0, -25px)
+      
+      @media (min-width: $screen-sm-min)
+        font-size: 38px
+        
+      @media (min-width: $screen-md-min)
+        font-size: 62px
+    
+    .step-title
+      max-width: 205px
+      color: #AF4460
+      font-weight: bold
+      margin-bottom: 10px
+
+      @media (min-width: $screen-sm-min)
+        max-width: none
+
+    .step-sub-title
+      color: $brand-2nd
+      font-weight: 500
+    
+    .step-text
+      display: none
+      color: #AF4460
+      font-size: 16px
+      padding: 15px 0 8px
+      +translate(0, 25px)
+      
+      @media (min-width: $screen-sm-min)
+        display: block
+        
+      @media (min-width: $screen-md-min)
+        font-size: 20px
+        padding: 35px 0 25px
+      
+      
+    .step-links
+      display: block
+      padding-top: 10px
+      +translate(0, 25px)
+      
+      @media (min-width: $screen-sm-min)
+        padding-top: 0
+      
+    .btn-green
+      @extend %btn-big
+      padding: 0 15px
+      
+      @media (min-width: $screen-sm-min)
+        padding: 0 26px
+    
+
+  .seq-in
+    .step-content-body
+    
+      .step-title, 
+      .step-sub-title,
+      .step-text,
+      .step-links
+        opacity: 1
+        +translate(0, 0)
+
+  .seq-out
+    .step-content-body
+    
+      .step-title, 
+      .step-sub-title,
+      .step-text,
+      .step-links
+        opacity: 1
+        +translate(0, 0)
+
+
+.seq-actions
+  position: absolute
+  display: none
+  z-index: 99
+  width: 100%
+  top: 0
+  height: 0
+  
+  > .container
+    position: relative
+
+  .hp-sequence-pagination
+    position: absolute
+    top: 519px;
+    left: 254px;
+    
+    &.seq-active
+      display: none
+
+    button
+      display: block
+      float: left
+      border: 0
+      margin: 3px
+      padding: 0
+      outline: 0
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      z-index: 168;
+      background-color: #8a8a89;
+
+      &.seq-current
+        background-color: #fff;
+  
+  .scroll-down
+    position: absolute;
+    z-index: 10;
+    right: 50%;
+    top: 594px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin-right: -24px;
+    
+    a
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-width: 2px;
+      border-color: rgb(255, 255, 255);
+      border-style: solid;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.22)
+      text-align: center;
+      line-height: 48px;
+
+
+      .fa
+        color: #fff
+        font-size: 22px;
+  
+      &:hover,
+      &:focus
+        background-color: rgba(255,255,255,0.1)
+
+  
+  @media (min-width: $screen-md-min)
+    display: block

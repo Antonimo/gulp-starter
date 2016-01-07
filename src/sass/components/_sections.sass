@@ -1,0 +1,55 @@
+
+%section_title
+	font-family: 'Raleway', sans-serif
+	font-size: 26px
+	line-height: 1;
+	color: rgb(26, 23, 27);
+	font-weight: 600;
+
+	@media (min-width: $screen-sm-min)
+		font-size: 50px
+
+.section
+	padding-top: 30px
+	padding-bottom: 40px
+
+	@media (min-width: $screen-sm-min)
+		padding-top:	60px
+		// padding-bottom:	100px
+		padding-bottom:	50px
+		
+	.section-title
+		@extend %section_title
+		margin-bottom: 10px
+			
+		@media (min-width: $screen-sm-min)
+			margin-bottom: 15px
+
+
+.section-container
+	@extend .section
+	@extend .container
+
+	.section-title
+		@extend %section_title
+		text-align: center
+		padding: 0
+		margin-top: 0
+
+	.section-lead
+		font-family: Open Sans
+		font-weight: 400
+		font-size: 14px
+		line-height: 1.3
+		text-align: center
+		padding-bottom: 30px
+		margin: 0
+		
+		@media (min-width: $screen-sm-min)
+			font-size: 20px
+			line-height: (40/18)
+			
+	
+	.section-more
+		text-align: center
+		margin-top: 40px

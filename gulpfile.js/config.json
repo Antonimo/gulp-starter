@@ -1,0 +1,59 @@
+{
+  "root": {
+    "src": "./src",
+    "dest": "./assets"
+  },
+  
+  "assetTasks": [],
+  "codeTasks": ["html", "css", "js"],
+  "watchableTasks": ["html", "css", "js"],
+  
+  "tasks": {
+    
+    "static": {
+      "src": "static",
+      "dest": "./"
+    },
+    
+    "wiredep": {
+      "src": ["sass/main.scss"]
+    },
+    
+    "css": {
+      "src": "sass",
+      "dest": "css",
+      "autoprefixer": {
+        "browsers": ["last 3 version"]
+      },
+      "sass": {
+        "outputStyle": "expanded",
+        "sourceComments": true,
+        "indentedSyntax": true
+      },
+      "sass_production": {
+        "outputStyle": "compressed",
+        "sourceComments": false,
+        "indentedSyntax": true
+      },
+      "extensions": ["sass", "scss", "css"]
+    },
+    
+    "js": {
+      "src": "js",
+      "dest": "js",
+      "concat": "main.js",
+      "extensions": ["js"]
+    },
+    
+    "html": {
+      "src": "html",
+      "dest": "./",
+      "dataFile": "data/global.json",
+      "htmlmin": {
+        "collapseWhitespace": true
+      },
+      "extensions": ["html", "json"],
+      "excludeFolders": ["layouts", "shared", "macros", "data"]
+    }
+  }
+}
