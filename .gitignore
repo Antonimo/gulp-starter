@@ -1,9 +1,12 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+dist
+bower_components
+node_modules
+npm-debug.log
+vendor
+herovid
 .DS_Store
 .sass-cache
 .publish
-/assets
 Desktop.ini
-node_modules
-bower_components
-**/generated/_icons.sass
-npm-debug.log
