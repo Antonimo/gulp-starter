@@ -1,0 +1,800 @@
+
+
+.homepage-hero-module 
+  border-right: none
+  border-left: none
+  position: relative
+  // height: 250px !important
+  height: 206px
+  margin-top: 52px
+  
+  @media (min-width: $screen-sm-min)
+    margin-top: 0
+    // height: auto
+    height: 100%
+    height: 100vh
+
+.no-video .video-container video,
+.touch .video-container video 
+  display: none
+
+.no-video .video-container .poster,
+.touch .video-container .poster 
+  display: block !important
+
+.video-container 
+  position: relative
+  bottom: 0%
+  left: 0%
+  height: 100%
+  width: 100%
+  overflow: hidden
+  background: #000
+
+.video-container .poster
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent center center no-repeat;
+  background-size: cover;
+  
+  @media (min-width: $screen-sm-min)
+    display: none
+    
+
+.video-container .filter 
+  z-index: 100
+  position: absolute
+  background: rgba(0, 0, 0, 0.4)
+  width: 100%
+
+.video-container video 
+  position: absolute
+  z-index: 0
+  bottom: 0
+
+.video-container video.fillWidth 
+  width: 100%
+
+
+
+.scroll-down
+  width: 37px
+  height: 62px
+  background-image: url(../../img/arrow-down.png)
+  background-repeat: no-repeat
+  z-index: 110
+  display: none
+  // display: block
+  
+  @media (min-width: $screen-sm-min)
+    display: block
+  
+  &.arrow2
+    background-image: url(../../img/arrow-down2.png)
+    height: 52px
+
+
+
+.homepage-hero-module
+  // min-height: 750px
+  // height: 100%
+  // height: 100vh
+  
+  .hero-items
+    position: absolute
+    top: 40%
+    width: 100%
+    z-index: 101
+    padding: 0 10%
+    
+  .text
+    font-size: 3.400rem
+    line-height: 1.1
+    text-align: center
+    text-transform: uppercase
+    font-family: "BebasNeue", Arial
+    
+    
+    @media (min-width: $screen-lg-min)
+      font-size: 4.375rem
+      
+  
+  .scroll-down
+    position: absolute
+    bottom: 0
+    left: 50%
+    margin-left: -18px
+  
+
+
+body.home
+  .content-section
+    padding-top: 15px
+    padding-bottom: 15px
+    text-align: center
+    position: relative
+    overflow: hidden
+    background-color: #0b0b0b
+    z-index: -1
+
+    
+    
+    @media (min-width: $screen-lg-min)
+      padding-top: 140px
+      padding-bottom: 140px
+
+  .content-items
+    position: relative
+
+.parallax-items
+  position: absolute
+  top: 0
+  right: 0
+  // bottom: -100%
+  left: 0
+  top: -13%
+  top: -17%
+  height: 75%
+  
+  
+  // transition-property: transform
+  // transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1)
+  // transition-duration: 0.4s
+
+
+.home-floating-element-1,
+.home-floating-element-2,
+.home-floating-element-3,
+.home-floating-element-4,
+.home-floating-element-5
+  position: absolute
+  // background-repeat: no-repeat
+  // background-size: 100%
+  
+  img
+    max-width: 100%
+
+.home-floating-element-1
+  // width: 385px
+  // height: 370px
+  // aspect ratio = original width ÷ original height
+  // padding-bottom = width / height * 100
+  // padding-bottom: 104.1%
+  
+  // width% = (w1)385/(w2)1920*100
+  width: 20.1%
+  
+  top: 24%
+  left: 21%
+
+.home-floating-element-2
+  width: 5.7%
+  top: 50%
+  left: 8%
+  
+.home-floating-element-3
+  width: 7.6%
+  top: 71%
+  left: 88%
+  
+.home-floating-element-4
+  width: 9.9%
+  top: 41%
+  left: 76%
+
+  
+.home-floating-element-5
+  width: 34.4%
+  top: 75%
+  left: -1%
+  
+
+
+
+
+
+
+.home-slider1-wrap
+  padding: 0 15px
+  margin-bottom: 110px
+  
+  
+  @media (min-width: $screen-sm-min)
+    // padding: 0 145px
+    padding: 0 9%
+  
+.home-slider1
+  
+  .slick-slide
+    height: 200px
+    position: relative
+    
+    @media (min-width: $screen-sm-min)
+      // height: 783px
+      height: auto
+      
+  .ratio
+    position: relative
+    height: 100%
+    
+    @media (min-width: $screen-sm-min)
+      height: auto
+      padding-bottom: 47%
+  
+  .slide-l1,
+  .slide-l2,
+  .slide-text,
+  .slide-logo
+    position: absolute
+    background-repeat: no-repeat
+  
+  .slide-l1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-size: cover
+    background-position: center
+    
+  
+  .slide-l2
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-size: cover
+    background-position: center
+    
+  
+  .slide-text
+    position: absolute
+    left: 97px
+    bottom: 107px
+    top: 9px
+    left: 9px
+    
+    bottom: 20%
+    right: 0
+    
+    background-position: left top
+    background-size: auto 100%
+    
+    
+    @media (min-width: $screen-lg-min)
+      top: 0
+      right: 0
+      bottom: 13.6%
+      left: 5.87%
+      background-position: left bottom
+      background-size: auto 74%;
+  
+    @media (min-width: 1600px)
+      background-size: auto
+    
+  
+  .slide-logo
+    top: 80%
+    left: 0
+    
+    right: 9px
+    bottom: 9px
+    
+    background-position: right bottom
+    background-size: auto 100%
+    
+    
+    @media (min-width: $screen-lg-min)
+      top: 0
+      left: 0
+      
+      right: 50px
+      bottom: 35px
+      
+      background-size: auto
+      
+      
+    
+  
+  
+  .slide-l2,
+  .slide-text
+    opacity: 0
+    +transition-timing-function(cubic-bezier(0.23, 1, 0.32, 1))
+    +transition-delay(0.5s)
+    transition-property: opacity, transform
+    transform: translateX(-60%) translateY(0) translateZ(0)
+  
+  
+  
+  .slide-logo
+    opacity: 0
+    +transition-timing-function(cubic-bezier(0.23, 1, 0.32, 1))
+    +transition-delay(1.6s)
+    transition-property: opacity, transform
+    transform: translateX(70%) translateY(0) translateZ(0)
+    
+    
+    
+  
+  
+  .slick-active
+   
+    .slide-l2,
+    .slide-text
+      +transition-duration(1.0s)
+      opacity: 1
+      transform: translateX(0) translateY(0) translateZ(0)
+    
+    
+    .slide-logo
+      +transition-duration(0.8s)
+      opacity: 1
+      transform: translateX(0) translateY(0) translateZ(0)
+      
+  
+  
+  
+  .slick-dots 
+    position: absolute
+    bottom: -26px
+    list-style: none
+    display: block
+    text-align: center
+    padding: 0
+    margin: 0
+    margin-left: -5px
+    width: 100%
+    
+    
+    @media (min-width: $screen-lg-min)
+      bottom: 44px
+      left: 5.87%
+      width: auto
+      
+    
+    
+    li 
+      position: relative
+      display: inline-block
+      height: 12px
+      width: 12px
+      margin: 0 6px
+      padding: 0
+      cursor: pointer
+      
+      button 
+        border: 0
+        display: block
+        height: 12px
+        width: 12px
+        outline: none
+        line-height: 0px
+        font-size: 0px
+        color: transparent
+        padding: 0
+        cursor: pointer
+        border-radius: 50%
+        background: #ffffff
+        
+        &:hover, &:focus
+          outline: none
+      
+      &.slick-active button
+        background: #00ffaa
+          
+      
+  
+
+
+
+.home-info-box
+  color: #ffffff
+  text-align: center
+  margin: 0 auto
+  margin-bottom: 40px
+  max-width: 990px
+  padding-left: 15px
+  padding-right: 15px
+  
+  @media (min-width: $screen-lg-min)
+    margin-bottom: 110px
+  
+  
+  h1
+    @extend .g-title1
+    @extend .g-brick1
+    
+    margin-bottom: 24px
+    
+    @media (min-width: $screen-lg-min)
+      margin-bottom: 50px
+  
+  p
+    color: #fefefe
+    font-size: 1.500rem
+    line-height: 1.25
+    margin-bottom: 1.5em
+    font-weight: normal
+    
+    @media (min-width: $screen-lg-min)
+      font-weight: 300
+  
+  .styled-text
+    color: #00faaa
+    font-size: 1.500rem
+    line-height: 1.25
+    font-weight: 700
+
+
+
+
+
+.home-slider-info-wrap
+  
+  padding-bottom: 100px
+  
+  @media (min-width: $screen-sm-min)
+    padding-bottom: 300px
+  
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    z-index: -1
+    background-image: url('../../img/info-slider-bg-xs.png')
+    background-repeat: no-repeat
+    background-size: 100% auto
+    // background-size: cover
+    background-position: center
+    width: 100%
+    
+    // height: 1900px
+    padding-bottom: 152%
+    transform: translateY(-27%)
+    
+    
+    @media (min-width: $screen-sm-min)
+      background-image: url('../../img/info-slider-bg.png') // 1920x1972
+      transform: translateY(-33%)
+      background-size: auto
+      padding-bottom: 0
+      height: 1972px
+    
+    
+
+.home-slider-info
+  margin: 0 auto
+  max-width: 1110px
+  padding: 0 15px
+  text-align: left
+  // background-color: #1b181a
+  // background-color: rgba(255,255,255,0.52)
+  
+  @media (min-width: $screen-lg-min)
+    padding: 0
+  
+  .slick-slide
+    // height: 236px
+    position: relative
+    // background-color: rgba(255,255,255,0.1)
+    
+    
+    @media (min-width: $screen-sm-min)
+      height: 434px
+      
+  .ratio
+    position: relative
+    padding-bottom: 81.1%
+    
+    @media (min-width: $screen-sm-min)
+      padding-bottom: 0
+      height: 100%
+  
+  .ratio-content
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    height: 100%
+      
+      
+  .info-icon
+    position: absolute
+    left: 0
+    // top: 6%
+    top: 13%
+    right: 0
+    text-align: center
+    
+    height: 49%
+    
+    
+    @media (min-width: $screen-sm-min)
+      width: 32%
+      top: 0
+      right: auto
+      bottom: 0
+      height: auto
+      
+      padding-left: 20px
+      padding-top: 55px
+      padding-right: 35px
+      
+      text-align: right
+    
+    img
+      max-width: 100%
+      max-height: 100%
+      display: inline-block
+  
+  .text-box
+    position: relative
+    top: 62%
+    text-align: center
+    
+    @media (min-width: $screen-sm-min)
+      top: 0
+      padding-top: 34px
+      padding-right: 9%
+      padding-left: 32%
+      text-align: left
+    
+    br
+      display: none
+      
+      @media (min-width: $screen-sm-min)
+        display: inline
+    
+  
+  .h3
+    font-family: "BebasNeue", Arial
+    font-size: 2.000rem
+    line-height: 1.04
+    font-weight: normal
+    
+    @media (min-width: $screen-sm-min)
+      font-size: 2.813rem
+  
+  .info-more
+    font-size: 1rem
+    font-weight: normal
+    
+    
+    @media (min-width: $screen-sm-min)
+      display: none
+    
+    &:after
+      content: ''
+      display: inline-block
+      width: 25px
+      height: 10px
+      background-image: url(../../img/arrow3-right.png)
+      background-repeat: no-repeat
+      margin-left: 10px
+      vertical-align: middle
+
+  
+  &, p, li
+    font-size: 1.250rem
+    line-height: 1.5
+    font-weight: 500
+    color: #fefefe
+  
+  ul
+    padding-left: 16px
+  
+  .excerpt
+    display: none
+
+    @media (min-width: $screen-sm-min)
+      display: block
+  
+  .info-pop
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    
+    padding-top: 40px
+    padding-left: 25px
+    padding-right: 25px
+    
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      top: 17px
+      right: 17px
+      width: 17px
+      height: 17px
+      background-image: url(../../img/x.png)
+      background-repeat: no-repeat
+    
+    font-size: 1rem
+    font-weight: 500
+    
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    
+  
+  .info-icon,
+  .text-box,
+  .info-pop
+    transition: opacity 0.2s
+  
+  .info-icon,
+  .text-box
+    opacity: 1
+  
+  .info-pop
+    opacity: 0
+  
+  .pop-in
+    .info-icon,
+    .text-box
+      opacity: 0
+    
+    .info-pop
+      opacity: 1
+    
+    
+    @media (min-width: $screen-sm-min)
+      .info-icon,
+      .text-box
+        opacity: 1
+      
+      .info-pop
+        opacity: 0
+  
+  
+  .slick-prev,
+  .slick-next 
+    position: absolute
+    display: block
+    line-height: 0px
+    font-size: 0px
+    cursor: pointer
+    background: transparent
+    color: transparent
+    top: 50%
+    -webkit-transform: translate(0, -50%)
+    -ms-transform: translate(0, -50%)
+    transform: translate(0, -50%)
+    padding: 0
+    border: none
+    outline: none
+    opacity: 0.75
+    
+    z-index: 1;
+    
+    background-repeat: no-repeat
+    
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 52px;
+    height: 53px;
+    
+    
+    @media (min-width: $screen-lg-min)
+      border-radius: 0
+      background-color: transparent
+      height: 25px
+      width: 14px
+      
+      
+    &:hover, &:focus 
+      outline: none
+      // background-color: transparent
+      color: transparent
+      opacity: 1
+    
+     
+    &.slick-disabled:before 
+      opacity: 0.25
+    
+    
+  .slick-prev 
+    background-image: url(../../img/arrow2-left.png)
+    background-position: center
+    left: -24px
+    
+    @media (min-width: $screen-lg-min)
+      left: -40px
+
+    
+  .slick-next 
+    background-image: url(../../img/arrow2-right.png)
+    background-position: center
+    right: -24px
+    
+    @media (min-width: $screen-lg-min)
+      right: -40px
+
+
+
+
+
+
+
+
+
+.home-info-box2
+  text-transform: uppercase
+  margin-bottom: 70px
+  
+  .text1
+    @extend .g-title1
+    line-height: 0.9
+    color: #00ffaa
+    margin-bottom: 12px
+  
+  .text2
+    font-size: 1.100rem
+    font-weight: 400
+    color: #ffffff
+    
+    @media (min-width: $screen-sm-min)
+      font-size: 1.375rem // 22px
+    
+    
+    @extend .g-brick1
+    
+
+
+.logos-row
+  font-size: 1.400rem
+  text-align: center
+  margin: 0 auto
+  padding: 0 18%
+  
+  @media (min-width: $screen-lg-min)
+    display: flex
+    // flex-wrap: wrap
+
+    max-width: 1200px
+    
+    padding: 0
+    text-align: left
+    font-size: 1.375rem
+  
+  img
+    max-width: 90%
+    margin-bottom: 16px
+  
+  > div
+    flex: 1
+    margin-bottom: 55px
+    
+    margin-top: auto
+
+    @media (min-width: $screen-lg-min)
+      
+      flex-basis: 33.333%
+
+      margin-bottom: 10px
+      
+      // margin-right: 30px
+      padding-right: 30px
+
+      &:last-of-type
+        margin-right: 0
+    

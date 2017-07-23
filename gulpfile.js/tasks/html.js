@@ -1,7 +1,7 @@
 var config       = require('../config')
 if(!config.tasks.html) return
 
-// var browserSync  = require('browser-sync')
+var browserSync  = require('browser-sync')
 var data         = require('gulp-data')
 var gulp         = require('gulp')
 var gulpif       = require('gulp-if')
@@ -14,7 +14,7 @@ var fs           = require('fs')
 var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
 var paths = {
-  src: [path.join(config.root.src, config.tasks.html.src, '/**/*.html'), exclude],
+  src: [path.join(config.root.src, config.tasks.html.src, '/**/*.{' + config.tasks.html.extensions + '}'), exclude],
   dest: path.join(config.root.dest, config.tasks.html.dest),
 }
 
@@ -24,16 +24,21 @@ var getData = function(file) {
 }
 
 var htmlTask = function() {
-  render.nunjucks.configure([path.join(config.root.src, config.tasks.html.src)], {watch: false })
 
   return gulp.src(paths.src)
     .pipe(data(getData))
     .on('error', handleErrors)
-    .pipe(render())
+    .pipe(render({
+      path: [path.join(config.root.src, config.tasks.html.src)],
+      envOptions: {
+        watch: false
+      }
+    }))
     .on('error', handleErrors)
-    .pipe(gulpif(process.env.NODE_ENV == 'production', htmlmin(config.tasks.html.htmlmin)))
+    .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
     .pipe(gulp.dest(paths.dest))
-    // .pipe(browserSync.stream())
+    .on('end', browserSync.reload)
+
 }
 
 gulp.task('html', htmlTask)

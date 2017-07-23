@@ -1,0 +1,276 @@
+
+.overlay 
+  width: 100%
+  height: 100%
+  position: fixed /* Stay in place */
+  top: 0
+  left: 0
+  z-index: 2030 /* Sit on top */
+  background-color: rgb(0,0,0) /* Black fallback color */
+  background-color: rgba(0,0,0, 0.92) /* Black w/opacity */
+
+
+/* Overlay closing cross */
+.overlay .overlay-close 
+  width: 30px
+  height: 30px
+  position: absolute
+  right: 15px
+  top: 15px
+  overflow: hidden
+  border: none
+  background: url(../../img/close.png) no-repeat center center
+  text-indent: 200%
+  color: transparent
+  outline: none
+  z-index: 100
+  
+  @media (min-width: $screen-lg-min)
+    right: 70px
+    top: 50px
+    
+  
+
+.overlay-hugeinc
+  opacity: 0
+  visibility: hidden
+  transition: opacity 0.5s, visibility 0s 0.5s
+  
+  overflow: auto
+  
+  @media (min-width: $screen-lg-min)
+    overflow: visible
+  
+
+.overlay-hugeinc.open
+  opacity: 1
+  visibility: visible
+  transition: opacity 0.5s
+
+/* Position the content inside the overlay */
+.overlay-content 
+  position: relative
+  width: 100%
+  margin-top: 30px /* to avoid conflict with the close button on smaller screens */
+  
+  
+  @media (min-width: $screen-lg-min)
+    top: 66px
+
+  
+
+
+
+
+.contact-modal
+  
+  .wrap-items
+    @include clearfix
+    
+    padding-left: 15px
+    padding-right: 15px
+    
+    @include site-in2
+    
+    @media (min-width: $screen-lg-min)
+      padding-right: 132px
+      
+    @media (min-width: 1600px)
+      // padding-right: 360px
+      padding-right: 252px
+  
+  
+  @media (min-width: $screen-lg-min)
+    .textbox
+      float: left
+      width: 47%  
+    
+    .contact-form
+      float: right
+      width: 53%
+      padding-top: 170px
+  
+  
+  .textbox
+    margin-bottom: 3em
+    
+    .h1
+      @extend .g-title1
+      // font-size: 2.250rem 
+      margin-bottom: 50px
+      text-transform: uppercase
+      
+      @extend .g-brick1-left
+    
+    .text
+      font-size: 1.375rem
+      line-height: 1.36
+      font-weight: normal
+      
+      .text-label
+        font-size: 1rem
+        color: #999999
+        text-transform: uppercase
+        margin-bottom: 0.5em
+      
+      a
+        color: #00ffaa
+        
+        &:hover,
+        &:focus
+          color: darken( #00ffaa, 15% )
+
+
+
+
+// https://github.com/tonystar/float-label-css
+
+@mixin float-label-container 
+  display: block
+  position: relative
+
+
+@mixin float-label 
+  label, > span 
+    position: absolute
+    left: 20px
+    top: 0
+    cursor: text
+    font-size: 75%
+    line-height: 1
+    font-weight: normal
+    opacity: 1
+    transition: all .2s
+    @content
+  
+
+
+@mixin float-label-input 
+  &::placeholder 
+    opacity: 0
+    transition: all .2s
+  
+  &:placeholder-shown:not(:focus)::placeholder 
+      opacity: 0
+  
+
+
+@mixin float-label-scaled 
+  &:placeholder-shown:not(:focus) + * 
+      font-size: 100%
+      // opacity: .5
+      @content
+  
+
+
+.has-float-label 
+  @include float-label-container
+  @include float-label 
+    top: 2px
+    line-height: 16px
+    
+  textarea 
+    width: 100%
+  
+  input, textarea 
+    @include float-label-input
+    font-size: inherit
+    padding-top: 1em
+    margin-bottom: 2px
+
+    @include float-label-scaled 
+      // top: .25em
+      line-height: 66px
+
+    &:focus 
+      outline: none
+
+
+.input-group 
+  width: 100%
+  
+  @media (min-width: $screen-lg-min)
+    display: table
+
+.input-group > * 
+  
+  @media (min-width: $screen-lg-min)
+    padding: 0 15px
+    display: table-cell
+    width: 50%
+  
+  &:first-child
+    padding-left: 0
+    
+  &:last-child
+    padding-right: 0
+
+
+
+
+.contact-form
+  
+  .has-float-label
+    font-size: 1.375rem
+
+  input, textarea
+    width: 100%
+    margin-bottom: 1rem
+    
+    border-style: solid
+    border-width: 1px
+    border-color: rgb(255, 255, 255)
+    border-color: rgba(255, 255, 255, 0.2)
+    border-bottom-color: #00ffaa
+    
+    background-color: rgb(0, 0, 0)
+    background-color: rgba(0, 0, 0, 0.2)
+    
+    padding: 0 20px
+    
+    color: #ffffff
+    font-size: 1.375rem
+  
+  input
+    height: 50px
+    
+    @media (min-width: $screen-lg-min)
+      height: 66px
+  
+  textarea
+    height: 232px
+    padding-top: 20px
+    
+    
+  .submit-box
+    text-align: right
+    
+  button[type=submit]
+    display: inline-block
+    padding: 6px 0
+
+    font-size: 1rem
+    font-weight: bold
+
+    white-space: nowrap
+    vertical-align: middle
+    touch-action: manipulation
+    cursor: pointer
+    user-select: none
+    background-image: none
+    border: 0
+    border-radius: 0
+    text-transform: none
+    overflow: visible
+    
+    background-color: transparent
+    
+    &:after
+      content: ''
+      display: inline-block
+      width: 48px
+      height: 37px
+      background-image: url(../../img/arrow-right.png)
+      background-repeat: no-repeat
+      margin-left: 20px
+      vertical-align: middle

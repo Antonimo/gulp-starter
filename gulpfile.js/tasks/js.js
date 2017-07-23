@@ -1,48 +1,28 @@
 var config       = require('../config')
-var path         = require('path')
+if(!config.tasks.js) return
+
 var gulp         = require('gulp')
-var concat       = require('gulp-concat')
+var browserSync  = require('browser-sync')
 var sourcemaps   = require('gulp-sourcemaps')
+var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
 var handleErrors = require('../lib/handleErrors')
-var size         = require('gulp-size')
-var debug        = require('gulp-debug')
-var manifest     = require('asset-builder')( config.root.src + '/manifest.json' )
+var path         = require('path')
 
-
-
+var paths = {
+  src: path.join(config.root.src, config.tasks.js.src, '/**/*.js'),
+  dest: path.join(config.root.dest, config.tasks.js.dest)
+}
 
 var jsTask = function() {
-
-	var paths = {
-    src: [],
-    dest: path.join(config.root.dest, config.tasks.js.dest),
-  }
-
-  manifest.forEachDependency('js', function(dep) {
-    
-    // console.log( '### forEachDependency: js' );
-    // console.log( 'dep.globs', dep.globs );
-    // console.log( 'dep.name',  dep.name );
-    
-    paths.src.append(dep.globs);
-  });
-
-  paths.src.push(
-    path.join(config.root.src, config.tasks.js.src, '/**/*.' + config.tasks.js.extensions + '') 
-  );
-  
-  // console.log( 'js task', paths)
-  
   return gulp.src(paths.src)
     .pipe(sourcemaps.init())
-    .pipe(concat(config.tasks.js.concat))
-    .pipe(uglify())
-    // .pipe(debug())
+    .pipe(concat('scripts.js'))
+    .pipe(uglify()) 
     .on('error', handleErrors)
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.dest))
-    // .pipe(size())
+    // .pipe(browserSync.reload({stream:true}));
 }
 
 gulp.task('js', jsTask)

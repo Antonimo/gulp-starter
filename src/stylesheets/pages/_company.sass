@@ -1,0 +1,174 @@
+
+.company-info-section,
+.company-team-section
+
+  h1, p
+    color: #000000
+    
+  h1
+    @extend .g-title1
+    font-weight: normal
+    line-height: 0.9
+    margin-top: 0
+    margin-bottom: 50px
+    text-transform: uppercase
+    
+    @extend .g-brick1-left
+    
+    &:after
+      border-color: #000000
+  
+  p
+    font-size: 1.5rem
+    line-height: 1.25
+  
+    
+.company-info-section
+  // height: 970px
+  
+  height: 100%
+  height: 100vh
+  min-height: 600px
+  
+  background-color: #ededed //! tmp
+  overflow: auto
+  position: relative
+  
+  background: #fafafa; /* Old browsers */
+  // background: -moz-radial-gradient(center, ellipse cover,  #fafafa 0%, #d0d0d0 100%); /* FF3.6+ */
+  // background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fafafa), color-stop(100%,#d0d0d0)); Chrome,Safari4+
+  // background: -webkit-radial-gradient(center, ellipse cover,  #fafafa 0%,#d0d0d0 100%); /* Chrome10+,Safari5.1+ */
+  // background: -o-radial-gradient(center, ellipse cover,  #fafafa 0%,#d0d0d0 100%); /* Opera 12+ */
+  // background: -ms-radial-gradient(center, ellipse cover,  #fafafa 0%,#d0d0d0 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #fafafa 0%,#d0d0d0 100%); /* W3C */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#d0d0d0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  
+  .text-box
+    // padding-top: 230px
+    position: relative
+    top: 24%
+    max-width: 1142px // in2 ?
+    
+    
+    padding-left: 15px
+    padding-right: 15px
+    
+    @include site-in2
+    
+  
+  .scroll-down
+    position: absolute
+    bottom: 0
+    left: 252px
+    
+  
+  
+  
+  
+  
+  
+  
+.company-team-section
+  background-color: #fefefe
+  overflow: auto
+  padding: 130px 0
+  
+  .team-row
+    padding-left: 15px
+    padding-right: 15px
+    
+    @include site-in2
+  
+  
+  .text-box
+    padding-bottom: 3em
+  
+  @media (min-width: $screen-lg-min)
+  
+    .team-row
+      display: flex
+      padding-right: 70px
+      
+    
+    .text-box
+      flex: 1
+      
+      padding-right: 70px
+  
+  
+  
+  // @media (min-width: $screen-sm-min) 
+  // @media (min-width: $screen-md-min) 
+  // @media (min-width: $screen-lg-min) 
+      
+  .team-box-wrap
+    overflow: hidden
+    
+    @media (min-width: $screen-lg-min) 
+      width: 75%
+
+  .team-box
+    @media (min-width: $screen-sm-min) 
+      display: flex
+      flex-wrap: wrap
+      margin: -50px -3px -3px 0
+    
+      
+    
+  .team-item
+    // height: 620px
+    // flex: 1
+    // width: 33.3%
+    flex-basis: 50%
+    
+    
+    color: #000000
+    
+    border-style: solid
+    border-color: #00ffaa
+    
+    border-width: 0 0 3px 0
+    padding: 40px 0px 30px
+  
+  
+    @media (min-width: $screen-sm-min) 
+      padding: 50px 40px 60px
+      border-width: 0 3px 3px 0
+    
+    
+    @media (min-width: $screen-lg-min) 
+      
+      padding: 50px 30px 60px
+
+    @media (min-width: 1400px) 
+      flex-basis: 33.333%
+      padding: 50px 40px 60px
+    
+    img
+      width: 60%
+      
+      max-width: 170px
+      
+      @media (min-width: $screen-lg-min) 
+        max-width: none
+        width: auto
+  
+    .title
+      margin-top: 1em
+      font-weight: bold
+      font-size: 2rem
+      line-height: 1.2
+      margin-bottom: 0.3em
+      
+      @media (min-width: $screen-lg-min) 
+        margin-top: 40px
+        font-size: 1.250rem
+      
+      
+    .text
+      font-size: 1.125rem
+      line-height: 1.2
+      //font-weight: light
+      
+  

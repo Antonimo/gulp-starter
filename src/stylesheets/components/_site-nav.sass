@@ -1,0 +1,217 @@
+.site-nav
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 1030
+  
+  // mobile height: ~52px
+  
+  width: 100%
+  
+  font-size: 2.100rem
+  font-weight: 500
+  
+  @include clearfix
+  
+  
+  @media (min-width: $screen-sm-min)
+    font-size: 1.125rem
+    font-weight: 300
+  
+  .brand-wrap
+    background-color: rgba(0,0,0,0.2)
+    background-image: url('../../img/bg_dot.png')
+    padding-left: 15px
+    
+    @media (min-width: $screen-sm-min)
+      float: left
+      width: 33.33%
+      background-image: none
+      padding-left: 70px
+    
+    
+    a.brand
+      display: table-cell
+      vertical-align: middle
+      height: 52px
+      padding: 12px 0
+      
+      @media (min-width: $screen-sm-min)
+        height: 88px
+      
+      img
+        max-height: 100%
+  
+    .mobile_nav_toggle 
+      position: relative
+      float: right
+      padding: 16px 15px
+      width: 52px
+      height: 52px
+      background-color: transparent
+      background-image: none
+      border: none
+      
+      @media (min-width: $screen-sm-min) 
+        display: none
+        
+      // We remove the `outline` here, but later compensate by attaching `:hover`
+      // styles to `:focus`.
+      &:focus 
+        outline: 0
+        
+      &:hover,
+      &:focus
+        background-color: #333333
+      
+        
+      // Bars
+      .icon-bar 
+        display: block
+        // width: 22px
+        height: 2.2px
+        border-radius: 0
+        background-color: #ffffff
+        transition: all 0.2s
+        
+      .icon-bar + .icon-bar 
+        margin-top: 6px
+        
+      .top-bar 
+      
+      .middle-bar 
+        margin-left: 36%
+      
+      .bottom-bar 
+      
+      
+      
+  .nav-wrap
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    
+    background-color: rgb(0, 0, 0)
+    background-color: rgba(0, 0, 0, 0.9)
+    
+    padding-top: 86px
+    padding-bottom: 420px
+    
+    &.nav-overlay
+      display: none
+      
+      @media (min-width: $screen-sm-min)
+        display: block !important
+    
+    @media (min-width: $screen-sm-min)
+      position: static
+      float: right
+      width: 66.66%
+      background-color: #000
+      
+      padding-top: 0
+      padding-bottom: 0
+      padding-left: 30px
+      padding-right: 30px
+      background-image: url('../../img/bg_dot.png')
+    
+    
+    button.close 
+      position: fixed
+      top: 0
+      right: 0
+      width: 52px
+      height: 52px
+      z-index: 2010
+      font-size: 42px
+      font-weight: 300
+      line-height: 52px
+      cursor: pointer
+      border: 0
+      background: transparent
+      padding: 0
+      -webkit-appearance: none
+      color: #ffffff
+      text-shadow: none
+      
+      
+      @media (min-width: $screen-sm-min)
+        display: none
+
+
+  .navbar-nav
+    padding-left: 0
+    margin: 0
+    list-style: none
+    @include clearfix
+    
+    > li
+      position: relative
+      display: block
+      
+      @media (min-width: $screen-sm-min)
+        float: left
+      
+      > a
+        padding: 14px 50px
+        line-height: $line-height-computed
+        position: relative
+        display: inline-block
+        // min-width: 197px
+        // text-align: center
+        
+        @media (min-width: $screen-sm-min)
+          padding: 33px 10px 32px;
+          display: block
+    
+        @media (min-width: $screen-lg-min)
+          padding: 33px 50px 32px
+          
+    > li > a 
+      color: #fff
+      
+      &::after
+        content: ''
+        display: block
+        position: relative
+        top: 6px
+        height: 0    
+        border-bottom: 1px solid #FFF
+        opacity: 0
+        transition: opacity 0.2s
+        
+      &:hover,
+      &:focus 
+        text-decoration: none
+        
+        &::after
+          opacity: 1
+
+    
+    > .active > a,
+    > .current-menu-item > a 
+      &,
+      &:hover,
+      &:focus 
+        font-weight: bold
+        
+        &::after
+          opacity: 1
+
+  
+  @media (min-width: $screen-sm-min)  
+    .navbar-main
+      float: left
+      
+    .navbar-right
+      float: right
+    
+  
+  &.mobile-nav-active
+    .brand-wrap .mobile_nav_toggle
+      opacity: 0
+    
+    .nav-overlay
+      // display: block

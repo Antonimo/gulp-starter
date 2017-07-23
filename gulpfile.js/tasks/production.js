@@ -1,20 +1,18 @@
-var config          = require('../config')
-var gulp            = require('gulp')
-var gulpSequence    = require('gulp-sequence')
+var config       = require('../config')
+var gulp         = require('gulp')
+var gulpSequence = require('gulp-sequence')
 var getEnabledTasks = require('../lib/getEnabledTasks')
 
-
 var productionTask = function(cb) {
-
+  global.production = true
   var tasks = getEnabledTasks('production')
-  // gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'rev', 'static', cb)
   
-  GLOBAL.enabled.production = true;
   
   if( tasks.assetTasks.length == 0 ){
-    gulpSequence('clean', tasks.codeTasks, 'rev', 'static', cb); return;
+    tasks.assetTasks = false;
   }
-  gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'rev', 'static', cb)
+  // gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'static', cb)
+  gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, cb)
   
 }
 

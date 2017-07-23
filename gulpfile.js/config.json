@@ -1,27 +1,31 @@
 {
   "root": {
     "src": "./src",
-    "dest": "./assets"
+    "dest": "./dist"
   },
-  
-  "assetTasks": [],
-  "codeTasks": ["html", "css", "js"],
-  "watchableTasks": ["html", "css", "js"],
-  
+
   "tasks": {
-    
-    "static": {
+    "browserSync-off": {
+      "server": {
+        "baseDir": "public"
+      }
+    },
+
+    "static-off": {
       "src": "static",
-      "dest": "./"
+      "dest": "./",
+      "extensions": ["*"]
     },
     
-    "wiredep": {
-      "src": ["sass/main.scss"]
+    "js-off": {
+      "src": "javascripts",
+      "dest": "javascripts",
+      "extensions": ["js"]
     },
     
     "css": {
-      "src": "sass",
-      "dest": "css",
+      "src": "stylesheets",
+      "dest": "stylesheets",
       "autoprefixer": {
         "browsers": ["last 3 version"]
       },
@@ -37,15 +41,8 @@
       },
       "extensions": ["sass", "scss", "css"]
     },
-    
-    "js": {
-      "src": "js",
-      "dest": "js",
-      "concat": "main.js",
-      "extensions": ["js"]
-    },
-    
-    "html": {
+
+    "html-off": {
       "src": "html",
       "dest": "./",
       "dataFile": "data/global.json",
@@ -54,6 +51,10 @@
       },
       "extensions": ["html", "json"],
       "excludeFolders": ["layouts", "shared", "macros", "data"]
+    },
+
+    "production" : {
+      "rev": true
     }
   }
 }

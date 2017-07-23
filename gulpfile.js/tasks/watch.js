@@ -1,15 +1,12 @@
-var config       = require('../config')
-var gulp         = require('gulp')
-var path         = require('path')
-var watch        = require('gulp-watch')
-var freemem      = require('../lib/freemem')
+var config = require('../config')
+var gulp   = require('gulp')
+var path   = require('path')
+var watch  = require('gulp-watch')
 var gulpSequence = require('gulp-sequence')
 
-var watchTask = function(cb) {
-  var watchableTasks = ['fonts', 'iconFont', 'images', 'svgSprite','html', 'css']
-  
-  watchableTasks = config.watchableTasks;
-  
+var watchTask = function() {
+  var watchableTasks = ['fonts', 'iconFont', 'images', 'svgSprite', 'html', 'css', 'js', 'static']
+
   watchableTasks.forEach(function(taskName) {
     var task = config.tasks[taskName]
     if(task) {
@@ -21,14 +18,11 @@ var watchTask = function(cb) {
         verbose: true,
         usePolling: true
       }, function() {
-        
-         // require('./' + taskName)()
-         
-         gulpSequence( taskName )()
-         
-         freemem()
+       
+       // require('./' + taskName)()
+       
+       gulpSequence( taskName )()
       })
-      
     }
   })
 }

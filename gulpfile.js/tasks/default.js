@@ -7,10 +7,14 @@ var defaultTask = function(cb) {
   
   console.log( "Enabled Tasks for watch:", tasks );
   
-  if( tasks.assetTasks.length == 0 ){
-  	gulpSequence('clean', tasks.codeTasks, 'static', 'watch', cb); return;
-  }
-  gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'static', 'watch', cb)
+  
+  gulpSequence('clean', tasks.codeTasks, 'watch', cb); return;
+  
+  
+  // if( tasks.assetTasks.length == 0 ){
+  //   gulpSequence('clean', tasks.codeTasks, 'static', 'watch', cb); return;
+  // }
+  // gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'static', 'watch', cb)
 }
 
 gulp.task('default', defaultTask)

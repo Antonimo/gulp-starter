@@ -1,0 +1,87 @@
+
+// for viewport height hero elements
+
+html, body
+  width: 100%;
+  height: 100%;
+
+
+// Soft transitions
+  
+a, 
+button
+  +transition(all 0.25s)
+
+
+// Wordpress Content
+
+img.alignright { float: right; margin: 5px 0 1em 1em; }
+img.alignleft { float: left; margin: 5px 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+
+div.wpcf7 .ajax-loader
+  float: left
+
+
+// Site stuff
+
+.dot-bg
+  background-image: url('../../img/bg_dot.png')
+  
+  
+  
+.g-title1
+  font-family: "BebasNeue", Arial
+  font-size: 4.200em
+  text-transform: uppercase // none
+  
+  @media (min-width: $screen-lg-min)
+    font-size: 5.25rem // 100px
+    
+  @media (min-width: 1600px)
+    font-size: 6.250rem // 100px
+
+
+.g-brick1,
+.g-brick1-left
+    
+  &:after
+    content: ''
+    display: block
+    padding-top: 24px
+    width: 40px
+    border-bottom: 3.1px solid #fff    
+    
+    
+    @media (min-width: $screen-lg-min)
+      padding-top: 50px
+      width: 90px
+      border-bottom: 7px solid #fff    
+
+.g-brick1
+  &:after
+    margin: 0 auto
+    
+    
+// Site layout
+
+.in2
+  
+  @media (min-width: $screen-lg-min)
+    padding-left: 132px
+  
+  @media (min-width: 1600px)
+    padding-left: 252px
+    
+    
+@mixin site-in2
+  
+  @media (min-width: $screen-lg-min)
+    padding-left: 132px
+  
+  @media (min-width: 1600px)
+    padding-left: 252px
